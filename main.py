@@ -3,8 +3,8 @@ from PIL import Image
 import time
 import random
 
-IMAGE_PATH = "deg.webp"
-SCALE_FACTOR = 0.5
+IMAGE_PATH = "catn.jpeg"
+SCALE_FACTOR = 0.4
 LINE_SPACING = 1
 
 
@@ -37,12 +37,12 @@ def draw_hatching():
             pixel = img.getpixel((x, y))
             chance_de_cliquer = (255 - pixel) / 255
             
-            
             if  not is_drawing and random.random() < chance_de_cliquer:
                 pyautogui.moveTo(start_x + x, start_y + y)
                 pyautogui.mouseDown()
                 is_drawing = True
-            
+            elif is_drawing and random.random() < chance_de_cliquer:
+                pyautogui.moveTo(start_x + x, start_y + y)
             elif is_drawing and random.random() > chance_de_cliquer:
                 pyautogui.mouseUp()
                 is_drawing = False
