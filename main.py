@@ -3,9 +3,9 @@ from PIL import Image
 import time
 import random
 
-IMAGE_PATH = "catn.jpeg"
-SCALE_FACTOR = 0.4
-LINE_SPACING = 1
+IMAGE_PATH = "OIP.webp"
+SCALE_FACTOR = 0.7
+LINE_SPACING = 2
 
 
 def draw_hatching():
@@ -27,7 +27,7 @@ def draw_hatching():
     
     start_x, start_y = pyautogui.position()
     
-    pyautogui.PAUSE = 0.0000 
+    pyautogui.PAUSE = 0.00001
 
     for y in range(0, height, LINE_SPACING):
         is_drawing = False
